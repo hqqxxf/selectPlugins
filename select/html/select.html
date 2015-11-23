@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>下拉菜单</title>
+    <link href="../css/select.css"rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="select1">
+
+</div>
+<div id="select2">
+
+</div>
+<!--<div class="zhuge_select" style="width:300px;">-->
+    <!--<div class="customer">请选择一个用户群</div>-->
+    <!--<div class="search"><input name=""  value="" class="zhuge_search"/></div>-->
+    <!--<ul class="zhuge_dropdownlist">-->
+        <!--<li class="add_new"><a href="#">+新建用户群</a></li>-->
+        <!--<li>每天点赞用户</li>-->
+        <!--<li>活跃用户</li>-->
+        <!--<li>每天点赞用户</li>-->
+        <!--<li>活跃用户</li>-->
+        <!--<li>每天点赞用户</li>-->
+        <!--<li>活跃用户</li>-->
+    <!--</ul>-->
+<!--</div>-->
+
+
+<div class="zhuge_select" style="width:300px;margin-top:300px;">
+    <div class="customer">版本</div>
+    <div class="search"><input name=""  value="" class="zhuge_search"/></div>
+    <ul class="zhuge_dropdownlist" >
+        <li class="title">事件属性</li>
+        <li>订单金额</li>
+        <li class="border_b">商品数量</li>
+        <li>版本</li>
+        <li>渠道</li>
+        <li>省份</li>
+        <li>城市</li>
+        <li>国家</li>
+        <li>分辨率</li>
+        <li>网络</li>
+        <li>设备</li>
+        <li class="active">运营商</li>
+        <li>设备品牌型号</li>
+        <li>系统版本</li>
+        <li>IP</li>
+        <li class="title">用户属性</li>
+        <li>账号</li>
+        <li>性别</li>
+    </ul>
+</div>
+
+
+<div class="zhuge_select" style="width:200px;position:relative;left:500px;">
+    <div class="customer">次数</div>
+    <ul class="zhuge_dropdownlist" style="width:200px;">
+        <li>次数</li>
+        <li>人数</li>
+        <li>%活跃</li>
+        <li>%新增</li>
+        <li>人均次数</li>
+        <li class="sub_customer_active">订单金额<ul class="sub_list"><li>和</li><li class="active">平均数</li></ul></li>
+        <li  class="sub_customer">商品数量<ul class="sub_list"><li>和</li><li class="active">平均数</li></ul></li>
+    </ul>
+</div>
+
+
+<script src="../bower_components/requirejs/require.js" data-main="../js/main.js"></script>
+<script>
+
+var data = {};
+var select1 = require(['baseSelect'], function(){
+    $.ajax({
+        url: "../js/data/usergroup.json",
+        type: "GET",
+        dataType: "json",
+        success: function(res){
+            data = res.values.userGroups;
+            $("#select1").searchSelect({
+                editable: false,
+                datas: data,
+                fieldName: 'name',
+                placeHolder: '用户群',
+                searchUrl: '../js/data/usergroup.json',
+                searchField: 'name',
+                searchParamField: 'search',
+                loopDataFormat: 'values.userGroups',
+                width: 320,
+//                optionFormat: function(data){
+//                    return this.isStop == 1 ? '(已停用)' + this.text.xssEncode() : this.text.xssEncode();
+//                },
+                onChoose: null
+            });
+        },
+        error: function(err){
+            console.log(err);
+        }
+    });
+
+});
+var select2 = require(['oldSelect'], function(){
+    $("#select2").searchSelect({
+        editable: false,
+        datas: data,
+        fieldName: 'name',
+        placeHolder: '用户群',
+        searchUrl: '../js/data/usergroup.json',
+        searchField: 'name',
+        searchParamField: 'search',
+        loopDataFormat: 'values.userGroups',
+        width: 320,
+        optionFormat: function(data){
+            return this.class == "new_add" ? "new_add" : this.name.xssEncode();
+        },
+        onChoose: null
+    });
+
+});
+
+
+
+</script>
+</body>
+</html>

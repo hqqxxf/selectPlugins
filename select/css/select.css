@@ -1,0 +1,28 @@
+body,ul,li{ margin:0; padding:0;}
+.zhuge_select{position:relative;}
+.zhuge_select .customer{ font-size:14px; height:33px;line-height:33px; display:block; color:#807a62; cursor:pointer;font-style:normal;border:1px solid #E8E8E8;background:url(../images/sprites/select_sw.png) no-repeat right center;width:100%;text-indent:5px;}
+.zhuge_select .zhuge_select{border:1px solid #E8E8E8;height:33px;width:100%;line-height:33px;text-indent:10px;background:url(../images/sprites/select_sw.png) no-repeat right center}
+.zhuge_select .zhuge_search{height:32px;width:100%;line-height:32px;text-indent:30px;background:url(../images/sprites/icon_serach.png) no-repeat 5px center;border:1px solid #E8E8E8;margin-top:1px;}
+.zhuge_select .zhuge_dropdownlist{margin:0;padding:0;position:absolute;margin-top:0px; border:1px solid #E8E8E8;border-top:0;width:100%;font-size:13px; overflow: auto; z-index: 999;}
+.zhuge_select .zhuge_dropdownlist li{display:block;width:100%;line-height:33px;color:#666666;text-indent:5px;position:relative; cursor:pointer}
+.zhuge_select .zhuge_dropdownlist li.border_b{border-bottom:1px solid #E8E8E8;}
+.zhuge_select .zhuge_dropdownlist li.title{background:#fbfbfb;font-weight:bold}
+.zhuge_select .zhuge_dropdownlist li.title:hover{background:#fbfbfb;color:#666666;font-weight:bold}
+.zhuge_select .zhuge_dropdownlist li.add_new{background:#fff;color:#00a0ea;}
+.zhuge_select .zhuge_dropdownlist li.add_new a{color:#00a0ea;text-decoration:none;font-weight:bold;}
+.zhuge_select .zhuge_dropdownlist li.add_new:hover{background:#fff;color:#00a0ea;}
+.zhuge_select .zhuge_dropdownlist li.search:first-child{text-indent:0px;}
+.zhuge_select .zhuge_dropdownlist li.search:first-child:hover{background:#fff;}
+.zhuge_select .zhuge_dropdownlist li:last-child{border-bottom:0;}
+.zhuge_select .zhuge_dropdownlist li:hover{background:#00a0ea;color:#fff;}
+.zhuge_select .zhuge_dropdownlist li:active{background:#00a0ea;color:#fff;}
+.zhuge_select .zhuge_dropdownlist li.active{background:#00a0ea;color:#fff;}
+.zhuge_select .zhuge_dropdownlist li.sub_customer{color:#666666;background:url(../images/sprites/icon-right.png) no-repeat right center}
+.zhuge_select .zhuge_dropdownlist li.sub_customer .sub_list{display:none}
+.zhuge_select .zhuge_dropdownlist li.sub_customer_active{background:#00a0ea url(../images/sprites/icon-right-active.png) no-repeat right center;color:#fff}
+.zhuge_select .zhuge_dropdownlist li.sub_customer_active .sub_list{margin:0;padding:0;position:absolute;background:#fff;left:100%;border:1px solid #E8E8E8;width:100%;top:0px;}
+.zhuge_select .zhuge_dropdownlist li.sub_customer_active .sub_list li{color:#666666;text-indent:5px;}
+.zhuge_select .zhuge_dropdownlist li.sub_customer_active .sub_list li:hover{background:#00a0ea;color:#fff;}
+.zhuge_select .zhuge_dropdownlist li.sub_customer_active .sub_list li:active{background:#00a0ea;color:#fff;}
+.zhuge_select .zhuge_dropdownlist li.sub_customer_active .sub_list li.active{background:#00a0ea;color:#fff;}
+.zhuge_select .zhuge_dropdownlist li.sub_customer_active .sub_list li:first-child:hover{background:#00a0ea;color:#fff;}
